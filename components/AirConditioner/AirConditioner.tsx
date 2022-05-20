@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 
 interface AirConditionerProps {
@@ -19,9 +20,10 @@ const AirConditioner: React.FC<AirConditionerProps> = ({
         <h4 className="text-gray-300 text-4xl">{temperature}°C</h4>
       </div>
       <div
-        className={`absolute h-1 w-1 rounded-full bottom-6 right-2 ${
-          power ? 'bg-green-400' : 'bg-gray-200'
-        }`}
+        className={clsx(
+          'absolute h-1 w-1 rounded-full bottom-6 right-2',
+          power ? 'bg-green-400' : 'bg-gray-200',
+        )}
       />
     </div>
   );
