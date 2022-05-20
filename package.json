@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,css}\""
   },
   "dependencies": {
     "clsx": "^1.1.1",
