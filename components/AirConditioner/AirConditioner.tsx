@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import digitalFontStyles from '../../styles/digital-font.module.css';
 
 interface AirConditionerProps {
   mode: 'cool' | 'heat';
@@ -17,7 +18,9 @@ const AirConditioner: React.FC<AirConditionerProps> = ({
       <div className="border absolute bottom-8 w-full" />
       <div className="absolute top-6 right-6">
         <h6 className="text-sm mb-2">{mode === 'cool' ? '❄️' : '☀️'}</h6>
-        <h4 className="text-gray-300 text-4xl">{temperature}°C</h4>
+        <h4 className={clsx('text-gray-300 text-4xl', digitalFontStyles.font)}>
+          {temperature}°C
+        </h4>
       </div>
       <div
         className={clsx(
