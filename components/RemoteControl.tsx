@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../states/hooks';
-import { acSelector, valuesActions } from '../states/values';
+import { acActions, acSelector } from '../states/values';
 
 interface ControlButtonProps {
   icon: string;
@@ -30,36 +30,36 @@ const RemoteControl: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="sm:w-1/2 grid grid-cols-2 gap-2 p-4">
+    <div className="grid grid-cols-2 gap-2 p-4">
       <ControlButton
         icon="power"
         className={clsx(
           'col-span-2',
-          ac.power
+          ac.data.power
             ? 'bg-red-600 active:bg-red-500'
             : 'bg-green-600 active:bg-green-500',
         )}
-        onClick={() => dispatch(valuesActions.setPower(!ac.power))}
+        onClick={() => dispatch(acActions.setPower(!ac.data.power))}
       />
       <ControlButton
         icon="snowflake"
         className="bg-blue-700 active:bg-blue-600"
-        onClick={() => dispatch(valuesActions.setMode('cool'))}
+        onClick={() => dispatch(acActions.setMode('cool'))}
       />
       <ControlButton
         icon="sun"
         className="bg-orange-500 active:bg-orange-400"
-        onClick={() => dispatch(valuesActions.setMode('heat'))}
+        onClick={() => dispatch(acActions.setMode('heat'))}
       />
       <ControlButton
         icon="temperature-minus"
         className="bg-slate-600 active:bg-slate-500"
-        onClick={() => dispatch(valuesActions.decreaseTemperature())}
+        onClick={() => dispatch(acActions.decreaseTemperature())}
       />
       <ControlButton
         icon="temperature-plus"
         className="bg-slate-600 active:bg-slate-500"
-        onClick={() => dispatch(valuesActions.increaseTemperature())}
+        onClick={() => dispatch(acActions.increaseTemperature())}
       />
       <ControlButton
         icon="github"

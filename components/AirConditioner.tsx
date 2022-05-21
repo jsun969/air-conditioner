@@ -27,24 +27,26 @@ const AirConditioner: React.FC = () => {
       <div className="bg-white h-36 sm:h-44 shadow relative border rounded-t-xl rounded-b-3xl">
         <div className="border absolute bottom-8 w-full" />
         <div className="absolute top-6 right-6">
-          <h6 className="text-sm mb-2">{ac.mode === 'cool' ? '❄️' : '☀️'}</h6>
+          <h6 className="text-sm mb-2">
+            {ac.data.mode === 'cool' ? '❄️' : '☀️'}
+          </h6>
           <h4
             className={clsx(
               'text-gray-300 text-3xl sm:text-4xl',
               digitalFontStyles.font,
             )}
           >
-            {ac.temperature}°C
+            {ac.data.temperature}°C
           </h4>
         </div>
         <div
           className={clsx(
             'absolute h-1 w-1 rounded-full bottom-6 right-2 transition-colors duration-700',
-            ac.power ? 'bg-green-400' : 'bg-gray-200',
+            ac.data.power ? 'bg-green-400' : 'bg-gray-200',
           )}
         />
       </div>
-      <Wind show={ac.power} />
+      <Wind show={ac.data.power} />
     </div>
   );
 };

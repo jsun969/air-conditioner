@@ -14,10 +14,14 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "clsx": "^1.1.1",
+    "nanoid": "^3.3.4",
     "next": "12.1.6",
+    "qrcode.react": "^3.0.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-redux": "^8.0.1"
+    "react-redux": "^8.0.1",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1"
   },
   "devDependencies": {
     "@types/node": "17.0.34",
