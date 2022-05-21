@@ -1,21 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { initialACData } from '../typings/ACData';
 import { RootState } from './store';
-
-interface ValuesState {
-  power: boolean;
-  temperature: number;
-  mode: 'cool' | 'heat';
-}
-
-const initialState: ValuesState = {
-  power: false,
-  temperature: 26,
-  mode: 'cool',
-};
 
 export const valuesSlice = createSlice({
   name: 'value',
-  initialState,
+  initialState: initialACData,
   reducers: {
     setPower(state, action: PayloadAction<boolean>) {
       state.power = action.payload;
@@ -34,9 +23,6 @@ export const valuesSlice = createSlice({
 
 export const valuesActions = valuesSlice.actions;
 
-export const powerSelector = (state: RootState) => state.values.power;
-export const modeSelector = (state: RootState) => state.values.mode;
-export const temperatureSelector = (state: RootState) =>
-  state.values.temperature;
+export const acSelector = (state: RootState) => state.values;
 
 export default valuesSlice.reducer;

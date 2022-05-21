@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../states/hooks';
-import { valuesActions } from '../states/values';
+import { acSelector, valuesActions } from '../states/values';
 
 interface ControlButtonProps {
   icon: string;
@@ -26,7 +26,7 @@ const ControlButton: React.FC<ControlButtonProps> = ({
 };
 
 const RemoteControl: React.FC = () => {
-  const power = useAppSelector((state) => state.values.power);
+  const ac = useAppSelector(acSelector);
   const dispatch = useAppDispatch();
 
   return (
@@ -35,11 +35,11 @@ const RemoteControl: React.FC = () => {
         icon="power"
         className={clsx(
           'col-span-2',
-          power
+          ac.power
             ? 'bg-red-600 active:bg-red-500'
             : 'bg-green-600 active:bg-green-500',
         )}
-        onClick={() => dispatch(valuesActions.setPower(!power))}
+        onClick={() => dispatch(valuesActions.setPower(!ac.power))}
       />
       <ControlButton
         icon="snowflake"
