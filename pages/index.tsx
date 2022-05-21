@@ -25,11 +25,11 @@ const Home: NextPage = () => {
   return (
     <main className="p-2 max-w-2xl mx-auto">
       <AirConditioner />
-      <div className="sm:flex">
+      <div className="sm:flex sm:justify-between">
         <div className="sm:w-1/2">
           <RemoteControl />
         </div>
-        <div className="sm:w-1/2">
+        <div>
           <RCInfo />
         </div>
       </div>

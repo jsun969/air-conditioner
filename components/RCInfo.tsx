@@ -9,13 +9,20 @@ const RCInfo: React.FC = () => {
 
   const { isClient } = useCheckClient();
 
+  if (!isClient) return <div />;
+
   return (
-    <div className="p-4">
-      <div className="mb-2">ID: {ac.id}</div>
-      {isClient && (
-        <QRCodeSVG value={`${window.location.href}rc/${ac.id}`} size={256} />
-      )}
-    </div>
+    <button
+      className="mt-2"
+      onClick={() => window.open(`${window.location.href}rc/${ac.id}`)}
+    >
+      <div className="mb-2 text-center">{ac.id}</div>
+      <QRCodeSVG
+        value={`${window.location.href}rc/${ac.id}`}
+        size={256}
+        className="mx-auto"
+      />
+    </button>
   );
 };
 
