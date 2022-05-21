@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { Server } from 'Socket.IO';
+import { Server } from 'socket.io';
 import {
   ClientToServerEvents,
   ServerToClientEvents,
