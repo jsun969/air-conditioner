@@ -5,7 +5,7 @@ import RemoteControl from '../components/RemoteControl';
 const Home: NextPage = () => {
   return (
     <main className="p-2 max-w-2xl mx-auto">
-      <AirConditioner mode="cool" temperature={26} power={true} />
+      <AirConditioner />
       <RemoteControl />
     </main>
   );

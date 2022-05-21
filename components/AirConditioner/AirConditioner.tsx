@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import { useAppSelector } from '../../states/hooks';
 import digitalFontStyles from '../../styles/digital-font.module.css';
 
 const Wind: React.FC<{ show: boolean }> = ({ show }) => {
@@ -17,17 +18,11 @@ const Wind: React.FC<{ show: boolean }> = ({ show }) => {
   );
 };
 
-interface AirConditionerProps {
-  mode: 'cool' | 'heat';
-  temperature: number;
-  power: boolean;
-}
+const AirConditioner: React.FC = () => {
+  const power = useAppSelector((state) => state.values.power);
+  const mode = useAppSelector((state) => state.values.mode);
+  const temperature = useAppSelector((state) => state.values.temperature);
 
-const AirConditioner: React.FC<AirConditionerProps> = ({
-  mode,
-  temperature,
-  power,
-}) => {
   return (
     <div className="my-16">
       <div className="bg-white h-36 sm:h-44 shadow relative border rounded-t-xl rounded-b-3xl">

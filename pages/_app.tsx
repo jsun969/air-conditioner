@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from '../states/store';
 import '../styles/tailwind.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -10,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="A Windless Air Conditioner" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <ReduxProvider store={store}>
+        <Component {...pageProps} />
+      </ReduxProvider>
     </>
   );
 }
