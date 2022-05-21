@@ -13,7 +13,7 @@ const RCInfo: React.FC = () => {
 
   return (
     <button
-      className="mt-2"
+      className="w-full mx-auto"
       onClick={() => window.open(`${window.location.href}rc/${ac.id}`)}
     >
       <div className="mb-2 text-center">{ac.id}</div>
