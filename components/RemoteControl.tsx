@@ -30,7 +30,7 @@ const RemoteControl: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="grid grid-cols-2 gap-2 p-4">
+    <div className="grid grid-cols-2 gap-2">
       <ControlButton
         icon="power"
         className={clsx(
