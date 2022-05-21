@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../states/hooks';
-import { valuesActions } from '../../states/values';
+import { useAppDispatch, useAppSelector } from '../states/hooks';
+import { valuesActions } from '../states/values';
 
 interface ControlButtonProps {
   icon: string;

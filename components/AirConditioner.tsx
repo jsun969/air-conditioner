@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
-import { useAppSelector } from '../../states/hooks';
-import digitalFontStyles from '../../styles/digital-font.module.css';
+import { useAppSelector } from '../states/hooks';
+import digitalFontStyles from '../styles/digital-font.module.css';
 
 const Wind: React.FC<{ show: boolean }> = ({ show }) => {
   return (
