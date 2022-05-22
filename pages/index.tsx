@@ -1,15 +1,18 @@
 import { NextPage } from 'next';
 import { useEffect } from 'react';
+import ACAudio from '../components/ACAudio';
 import AirConditioner from '../components/AirConditioner';
 import RCInfo from '../components/RCInfo';
 import RemoteControl from '../components/RemoteControl';
+import { useCheckClient } from '../hooks/useCheckClient';
 import { socketClient } from '../lib/socketClient';
 import { useAppDispatch, useAppSelector } from '../states/hooks';
 import { acActions, acSelector } from '../states/values';
 
 const Home: NextPage = () => {
-  const dispatch = useAppDispatch();
+  const { isClient } = useCheckClient();
 
+  const dispatch = useAppDispatch();
   const ac = useAppSelector(acSelector);
 
   useEffect(() => {
@@ -29,10 +32,9 @@ const Home: NextPage = () => {
         <div className="sm:w-1/2">
           <RemoteControl />
         </div>
-        <div>
-          <RCInfo />
-        </div>
+        <div>{isClient && <RCInfo />}</div>
       </div>
+      {isClient && <ACAudio />}
     </main>
   );
 };

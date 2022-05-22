@@ -1,15 +1,10 @@
 import { QRCodeSVG } from 'qrcode.react';
 import React from 'react';
-import { useCheckClient } from '../hooks/useCheckClient';
 import { useAppSelector } from '../states/hooks';
 import { acSelector } from '../states/values';
 
 const RCInfo: React.FC = () => {
   const ac = useAppSelector(acSelector);
-
-  const { isClient } = useCheckClient();
-
-  if (!isClient) return <div />;
 
   return (
     <button

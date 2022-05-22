@@ -18,7 +18,10 @@ const ControlButton: React.FC<ControlButtonProps> = ({
   return (
     <button
       className={clsx('m-1 p-2 pt-3 rounded-full', className)}
-      onClick={onClick}
+      onClick={async () => {
+        await new Audio('/audio/di.mp3').play();
+        onClick();
+      }}
     >
       <Image src={`/icons/${icon}.svg`} alt="power" width={32} height={32} />
     </button>
