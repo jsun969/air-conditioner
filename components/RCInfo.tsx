@@ -11,7 +11,7 @@ const RCInfo: React.FC = () => {
       className="w-full mx-auto"
       onClick={() => window.open(`${window.location.href}rc/${ac.id}`)}
     >
-      <div className="text-center">{ac.id}</div>
+      <div className="text-center text-sm">ID: {ac.id}</div>
       <QRCodeSVG
         value={`${window.location.href}rc/${ac.id}`}
         size={256}

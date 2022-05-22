@@ -23,7 +23,8 @@ const WirelessRC: NextPage = () => {
 
   return (
     <main className="p-4 max-w-sm mx-auto">
-      <div className="flex justify-around items-center py-7 border rounded-xl mb-4">
+      <div className="flex justify-around items-center py-7 border rounded-xl mb-4 relative">
+        <div className="absolute top-1 text-xs">ID: {ac.id}</div>
         <div
           className={clsx(
             'text-8xl transition-colors duration-700',
