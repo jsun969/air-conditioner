@@ -25,7 +25,6 @@ const AirConditioner: React.FC = () => {
   return (
     <div className="my-16">
       <div className="bg-white h-36 sm:h-44 shadow relative border rounded-t-xl rounded-b-3xl">
-        <div className="border absolute bottom-8 w-full" />
         <div className="absolute top-6 right-6">
           <h6 className="text-sm mb-2">
             {ac.data.mode === 'cool' ? '❄️' : '☀️'}
@@ -39,6 +38,7 @@ const AirConditioner: React.FC = () => {
             {ac.data.temperature}°C
           </h4>
         </div>
+        <div className="border absolute bottom-8 w-full" />
         <div
           className={clsx(
             'absolute h-1 w-1 rounded-full bottom-6 right-2 transition-colors duration-700',
