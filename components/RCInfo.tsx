@@ -12,13 +12,11 @@ const RCInfo: React.FC = () => {
       onClick={() => window.open(`${window.location.href}rc/${ac.id}`)}
     >
       <div className="text-center text-sm">ID: {ac.id}</div>
-      {ac.id && (
-        <QRCodeSVG
-          value={`${window.location.href}rc/${ac.id}`}
-          size={256}
-          className="my-1 mx-auto"
-        />
-      )}
+      <QRCodeSVG
+        value={`${window.location.href}rc/${ac.id}`}
+        size={256}
+        className="my-1 mx-auto"
+      />
       <div className="text-center text-xs font-bold">
         Scan the QR code for wireless remote control
       </div>

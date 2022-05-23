@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { Server } from 'socket.io';
 import {
   ClientToServerEvents,
@@ -13,10 +12,8 @@ const SocketHandler = (_: unknown, res: any) => {
     res.socket.server.io = io;
 
     io.on('connection', (socket) => {
-      socket.on('init-ac', (res) => {
-        const id = nanoid();
+      socket.on('init-ac', (id) => {
         socket.join(id);
-        res(id);
       });
       socket.on('init-rc', (id) => {
         socket.join(id);

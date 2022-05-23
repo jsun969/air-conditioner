@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import ACAudio from '../components/ACAudio';
@@ -16,7 +17,9 @@ const Home: NextPage = () => {
   const ac = useAppSelector(acSelector);
 
   useEffect(() => {
-    socketClient.emit('init-ac', (id) => dispatch(acActions.setId(id)));
+    const id = nanoid();
+    dispatch(acActions.setId(id));
+    socketClient.emit('init-ac', id);
   }, []);
 
   useEffect(() => {

@@ -6,7 +6,7 @@ export interface ServerToClientEvents {
 }
 
 export interface ClientToServerEvents {
-  'init-ac': (res: (id: string) => void) => void;
+  'init-ac': (id: string) => void;
   'init-rc': (id: string) => void;
   update: (id: string, data: ACData) => void;
 }
