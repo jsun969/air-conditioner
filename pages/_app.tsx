@@ -2,8 +2,11 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Provider as ReduxProvider } from 'react-redux';
 import SocketDataUpdater from '../components/SocketDataUpdater';
+import { initSocketClient } from '../lib/socketClient';
 import { store } from '../states/store';
 import '../styles/tailwind.css';
+
+initSocketClient();
 
 function App({ Component, pageProps }: AppProps) {
   return (
