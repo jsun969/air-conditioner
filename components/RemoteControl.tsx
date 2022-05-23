@@ -15,13 +15,19 @@ const ControlButton: React.FC<ControlButtonProps> = ({
   className,
   onClick,
 }) => {
+  const ac = useAppSelector(acSelector);
+
   return (
     <button
-      className={clsx('m-1 p-2 pt-3 rounded-full', className)}
+      className={clsx(
+        'm-1 p-2 pt-3 rounded-full disabled:bg-gray-200',
+        className,
+      )}
       onClick={async () => {
         await new Audio('/audio/di.mp3').play();
         onClick();
       }}
+      disabled={ac.setDataLock}
     >
       <Image src={`/icons/${icon}.svg`} alt="power" width={32} height={32} />
     </button>
